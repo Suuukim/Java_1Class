@@ -18,18 +18,16 @@ public class IfTest1 {
 		
 		if(average >= 90) {
 			System.out.println("수");
-		}
-		if(average < 90 && average >= 80) {
+		} else if(average < 90 && average >= 80) {
 			System.out.println("우");
-		}
-		if(average < 80 && average >= 70) {
+		} else if(average < 80 && average >= 70) {
 			System.out.println("미");
-		}
-		if(average < 70 && average >= 60) {
+		} else if(average < 70 && average >= 60) {
 			System.out.println("양");
-		}
-		if(average < 60) {
+		} else if(average < 60) {
 			System.out.println("가");
 		}
 	}
 }
+
+
