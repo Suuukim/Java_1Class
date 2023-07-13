@@ -11,9 +11,44 @@ public class WeekDayTest {
 		int day = sc.nextInt();
 		
 //		1년 1월 1일 부터 입력한 년도의 전년도 12월 31일 까지 지난 날짜를 계산한다.
-		int sum = (year -1) * 365 + (year -1) / 4;
+		int sum = (year -1) * 365 + (year -1) / 4 - (year -1) / 100 + (year - 1) / 400;
 		
+//		전년도 12월 31일 까지 지난 날짜수에 올해 전달 까지 지난 날짜를 더한다.
+		int[] m = {31, 28, 31, 30, 31, 31, 31, 30, 31, 30, 31};
+		m[1] = year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? 29 : 28;
+		for(int i=1;i<month;i++) {
+			/*
+			switch (i) {
+			case 2:
+				sum += year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? 29 : 28;
+				break;
+			case 4: case 6: case 9: case 11:	// 짧은달
+				sum += 30;
+				break;
+			default:							// 긴달
+				sum += 31;
+				break;
+			}
+			*/
+			sum += m[i -1];
+		}
+//		전달 까지 진난 날수에 일을 더한다.
+		sum += day;
 		
+//		1년 1월 1일 부터 입력한 날짜까지 지난 날짜의 합계를 7로 나눈 나머지에 따라 요일이 결정된다.(0~일, 1~월, 2~화, 3~수, 4~목, 5~금, 6~토)
+		/*
+		 switch (sum % 7) {
+		  case 0: System.out.println("일요일"); break;
+		  case 0: System.out.println("월요일"); break;
+		  case 0: System.out.println("화요일"); break;
+		  case 0: System.out.println("수요일"); break;
+		  case 0: System.out.println("목요일"); break;
+		  case 0: System.out.println("금요일"); break;
+		  case 0: System.out.println("토요일"); break;
+		 */
 		
+//		배열을 선언할 때 new를 사용하지 않고 {}안에 초기치를 지정하면 초기치의 개수만큼 자동으로 배열을 만들고 초기치로 초기화시켜준다.
+		char[] week = {'일','월','화','수','목','금','토'};
+		System.out.println(week[sum % 7] + "요일");
 	}
 }
