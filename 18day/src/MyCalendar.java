@@ -10,11 +10,11 @@ public class MyCalendar {
 		int year = sc.nextInt();
 		int month = sc.nextInt();
 		
-		System.out.println("======================================");
+		System.out.println("=====================================");
 		System.out.printf("    %4d년 %2d월\n", year, month);
-		System.out.println("======================================");
+		System.out.println("=====================================");
 		System.out.println(" 일  월  화  수  목  금  토");
-		System.out.println("======================================");
+		System.out.println("=====================================");
 		
 //		1일의 요일 만큼 반복하며 빈칸을 출력한다.
 		for(int i=1;i<=MyCalen.weekDay(year, month, 1);i++) {
@@ -28,6 +28,6 @@ public class MyCalendar {
 				System.out.println();
 			}
 		}
-		System.out.println("\n====================================");
+		System.out.println("\n===================================");
 	}
 }
