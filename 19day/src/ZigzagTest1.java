@@ -17,7 +17,6 @@ public class ZigzagTest1 {
 					a[i][j] = ++count;
 				}
 			}
-			
 		}
 		
 		for(int i=0;i<4;i++) {
