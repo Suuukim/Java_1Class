@@ -18,8 +18,6 @@ public class BookVO {
 		this.publisher = publisher;
 		this.date = date;
 		this.price = price;
-		
-		date.setYear(date.getYear());
 	}
 	public String getTitle() {
 		return title;
